@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "home"
+    label: "Home"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - label: Template key
+            name: templateKey
+            widget: hidden
+            default: home
+          - label: "Diary"
+            name: "diary"
+            widget: "list"
+            fields:
+              - label: "Title"
+                name: title
+                widget: string
+                required: true
+              - label: Date
+                name: date
+                widget: date
+              - label: Place
+                name: place
+                widget: map
+              - label: Images
+                name: images
+                widget: list
+                field:
+                  - label: Image
+                    name: image
+                    widget: image
+              - label: Description
+                name: description
+                widget: text
+              
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages/other"
+    slug: "{{title}}"
+    fields:
+      - label: Template key
+        name: templateKey
+        widget: hidden
+        default: other
+      - label: "Title"
+        name: title
+        widget: string
+        required: true
+
+      
+
