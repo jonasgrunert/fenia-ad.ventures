@@ -12,7 +12,9 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
-            slug
+            fields {
+              slug
+            }
             frontmatter {
               title
               templateKey

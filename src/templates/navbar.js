@@ -9,7 +9,9 @@ const Header = () => {
         edges {
           node {
             id
-            slug
+            fields {
+              slug
+            }
             frontmatter {
               title
               templateKey
@@ -21,8 +23,9 @@ const Header = () => {
   `);
   const links = data.allMarkdownRemark.edges.map(({ node }) => ({
     title: node.frontmatter.title,
-    slug: node.slug
+    slug: node.fields.slug
   }));
+  console.log(links);
   const [open, setOpen] = useState(false);
   return (
     <nav className="navbar" role="navigation">

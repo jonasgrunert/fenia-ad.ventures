@@ -21,7 +21,7 @@ collections:
             name: "diary"
             widget: "list"
             fields:
-              - label: "Title"
+              - label: Title
                 name: title
                 widget: string
                 required: true
@@ -41,11 +41,14 @@ collections:
               - label: Description
                 name: description
                 widget: text
-              
+
   - name: "pages"
     label: "Pages"
-    folder: "src/pages/other"
+    folder: "src/pages"
     slug: "{{title}}"
+    filter:
+      field: temmplateKey
+      value: other
     fields:
       - label: Template key
         name: templateKey
@@ -55,6 +58,3 @@ collections:
         name: title
         widget: string
         required: true
-
-      
-
