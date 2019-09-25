@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Img } from "gatsby-image";
+import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDay,
@@ -46,9 +46,9 @@ const DayDetails = ({ title, date, place, images, description }) => {
                 class="modal-background"
               ></div>
               <div class="modal-content">
-                <p class="image is-4by3">
+                <p class="image is-1by1">
                   <Img
-                    flud={image.image.childImageSharp.fixed}
+                    flud={image.image.childImageSharp.fluid}
                     alt={image.name}
                   />
                 </p>

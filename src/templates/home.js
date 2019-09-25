@@ -35,10 +35,10 @@ export const query = graphql`
             image {
               childImageSharp {
                 fixed(height: 128, width: 128) {
-                  ...GatsbyImageSharpFixed
+                  ...GatsbyImageSharpFixed_tracedSVG
                 }
-                fluid(maxWidth: 400, maxHeight: 400) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 1280, maxHeight: 1280) {
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }
