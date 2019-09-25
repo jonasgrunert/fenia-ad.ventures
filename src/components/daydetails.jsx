@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Img } from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDay,
@@ -9,6 +10,7 @@ import {
 
 const DayDetails = ({ title, date, place, images, description }) => {
   const [isMarked, setMarked] = useState(false);
+  const [currentModal, setModal] = useState(false);
   return (
     <article className="media">
       <figure className="media-left">{/* Some other nice big icon */}</figure>
@@ -17,7 +19,7 @@ const DayDetails = ({ title, date, place, images, description }) => {
           <span className="icon">
             <FontAwesomeIcon icon={faCalendarDay} />
           </span>
-          {date}
+          {new Date(date).toLocaleDateString()}
           <span className="icon">
             <FontAwesomeIcon icon={faMapPin} />
           </span>
@@ -25,9 +27,48 @@ const DayDetails = ({ title, date, place, images, description }) => {
         </h6>
         <h2 className="title is-4">{title}</h2>
         <p className="content">{description}</p>
+        {images.map((image, idx) => (
+          <>
+            <figure className="image is-128x128">
+              <Img
+                fixed={image.image.childImageSharp.fixed}
+                alt={image.name}
+                role="button"
+                tabIndex={0}
+                onClick={() => setModal(idx)}
+              />
+            </figure>
+            <div className={`modal ${currentModal === idx ? "is-active" : ""}`}>
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => setModal(false)}
+                class="modal-background"
+              ></div>
+              <div class="modal-content">
+                <p class="image is-4by3">
+                  <Img
+                    flud={image.image.childImageSharp.fixed}
+                    alt={image.name}
+                  />
+                </p>
+              </div>
+              <button
+                onClick={() => setModal(false)}
+                class="modal-close is-large"
+                aria-label="close"
+              ></button>
+            </div>
+          </>
+        ))}
       </div>
       <div className="media-right">
-        <span onClick={() => setMarked(!isMarked)} className="icon">
+        <span
+          role="button"
+          tabIndex={0}
+          onClick={() => setMarked(!isMarked)}
+          className="icon"
+        >
           <FontAwesomeIcon icon={isMarked ? faMapMarker : faMapMarkerAlt} />
         </span>
       </div>
