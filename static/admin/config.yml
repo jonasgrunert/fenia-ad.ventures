@@ -34,10 +34,13 @@ collections:
               - label: Images
                 name: images
                 widget: list
-                field:
+                fields:
                   - label: Image
                     name: image
                     widget: image
+                  - label: Image Name
+                    name: name
+                    widget: string
               - label: Description
                 name: description
                 widget: text
