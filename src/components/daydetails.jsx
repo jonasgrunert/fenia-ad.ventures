@@ -29,14 +29,13 @@ const DayDetails = ({ title, date, place, images, description }) => {
         <p className="content">{description}</p>
         {images.map((image, idx) => (
           <>
-            <figure className="image is-128x128">
-              <Img
-                fixed={image.image.childImageSharp.fixed}
-                alt={image.name}
-                role="button"
-                tabIndex={0}
-                onClick={() => setModal(idx)}
-              />
+            <figure
+              className="image"
+              role="button"
+              tabIndex={0}
+              onClick={() => setModal(idx)}
+            >
+              <Img fixed={image.image.childImageSharp.fixed} alt={image.name} />
             </figure>
             <div className={`modal ${currentModal === idx ? "is-active" : ""}`}>
               <div
@@ -46,9 +45,9 @@ const DayDetails = ({ title, date, place, images, description }) => {
                 class="modal-background"
               ></div>
               <div class="modal-content">
-                <p class="image is-1by1">
+                <p class="image">
                   <Img
-                    flud={image.image.childImageSharp.fluid}
+                    fluid={image.image.childImageSharp.fluid}
                     alt={image.name}
                   />
                 </p>

@@ -25,7 +25,6 @@ const Header = () => {
     title: node.frontmatter.title,
     slug: node.fields.slug
   }));
-  console.log(links);
   const [open, setOpen] = useState(false);
   return (
     <nav className="navbar" role="navigation">

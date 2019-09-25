@@ -34,11 +34,11 @@ export const query = graphql`
             name
             image {
               childImageSharp {
-                fixed(height: 128, width: 128) {
-                  ...GatsbyImageSharpFixed_tracedSVG
+                fixed(height: 128) {
+                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }
-                fluid(maxWidth: 1280, maxHeight: 1280) {
-                  ...GatsbyImageSharpFluid_tracedSVG
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
