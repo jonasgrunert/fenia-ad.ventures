@@ -27,10 +27,17 @@ collections:
                 required: true
               - label: Date
                 name: date
-                widget: date
+                widget: datetime
               - label: Place
                 name: place
-                widget: map
+                widget: object
+                fields:
+                  - label: Position
+                    name: position
+                    widget: map
+                  - label: Name
+                    name: name
+                    widget: string
               - label: Images
                 name: images
                 widget: list

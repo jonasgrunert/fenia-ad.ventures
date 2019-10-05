@@ -19,11 +19,11 @@ const DayDetails = ({ title, date, place, images, description }) => {
           <span className="icon">
             <FontAwesomeIcon icon={faCalendarDay} />
           </span>
-          {new Date(date).toLocaleDateString()}
+          {" " + new Date(date).toLocaleDateString()}
           <span className="icon">
             <FontAwesomeIcon icon={faMapPin} />
           </span>
-          {place}
+          {" " + place}
         </h6>
         <h2 className="title is-4">{title}</h2>
         <p className="content">{description}</p>
@@ -66,9 +66,9 @@ const DayDetails = ({ title, date, place, images, description }) => {
           role="button"
           tabIndex={0}
           onClick={() => setMarked(!isMarked)}
-          className="icon"
+          className="icon is-large"
         >
-          <FontAwesomeIcon icon={isMarked ? faMapMarker : faMapMarkerAlt} />
+          <FontAwesomeIcon icon={isMarked ? faMapMarker : faMapMarkerAlt} size="3x"/>
         </span>
       </div>
     </article>
