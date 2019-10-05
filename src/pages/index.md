@@ -6,8 +6,11 @@ diary:
     images:
       - image: /img/dscf4897.jpg
         name: Berlin
+      - image: /img/dscf4923.jpg
+        name: Nice lights
     place:
       name: Home
       position: '{"type":"Point","coordinates":[99.3273926,17.4607127]}'
     title: The very first post
 ---
+
