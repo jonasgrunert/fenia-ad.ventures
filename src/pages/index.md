@@ -7,7 +7,7 @@ diary:
       - image: /img/dscf4897.jpg
         name: Wonderful image of Berlin at night
     place:
-      position: '{"type":"Point","coordinates":[13.3561698,52.4849388]}'
+      position: '{"type":"Point","coordinates":[100,25]}'
       name: Home
     title: The very first post
 ---
