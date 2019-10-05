@@ -1,14 +1,13 @@
 ---
 templateKey: home
 diary:
-  - date: 2019-09-25T16:42:16.887Z
-    description: 'This is the very first post. But it is by Jonas :('
+  - date: 2019-10-05T12:24:05.709Z
+    description: This is is hitty post
     images:
       - image: /img/dscf4897.jpg
-        name: Wonderful image of Berlin at night
+        name: Berlin
     place:
-      position: '{"type":"Point","coordinates":[100,25]}'
       name: Home
+      position: '{"type":"Point","coordinates":[99.3273926,17.4607127]}'
     title: The very first post
 ---
-
