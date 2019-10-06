@@ -99,7 +99,7 @@ const DayDetails = ({ title, date, place, images, description, index, isSelected
         </h6>
         <h2 className="title is-4">{title}</h2>
         <p className="content">{description}</p>
-        <ul style={{ display: "flex", flexWrap: "wrap" }}>
+        <ul style={{ display: "flex", flexWrap: "nowrap" }}>
           {images.map((image, idx) => (
             <>
               <li
