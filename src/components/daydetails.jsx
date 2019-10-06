@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -50,33 +50,46 @@ const onSwipe = (kind, action) => {
   }
 }
 
-const DayDetails = ({ title, date, place, images, description, index, isSelected, onSelect }) => {
-  const [currentModal, setModal] = useState(false);
+const createReducer = length => (state, action) => {
+  console.log(length, state);
+  switch (action) {
+    case "left": return state !== false ? (state === 0 ? length - 1 : state - 1) : state;
+    case "right": return state !== false ? (state === length - 1 ? 0 : state + 1) : state;
+    case "close": return false;
+    default: return action;
+  }
+}
 
-  const keylistener = (_, e) => {
+const DayDetails = ({ title, date, place, images, description, index, isSelected, onSelect }) => {
+  const [currentModal, dispatch] = useReducer(createReducer(images.length), false);
+
+  const keylistener = (e) => {
+    if (e.code === "ArrowLeft" || e.code === "ArrowRight") {
+      e.preventDefault();
+    }
     switch (e.code) {
       case "ArrowLeft": {
-        if (currentModal) { if (currentModal === 0) { setModal(images.length - 1) } else { setModal(currentModal - 1) } };
+        dispatch("left");
         break;
       }
       case "ArrowRight": {
-        if (currentModal) { if (currentModal === images.length - 1) { setModal(0) } else { setModal(currentModal + 1) } };
+        dispatch("right");
         break;
       }
-      default: break;
+      default: console.log(e);
     }
   }
 
   useEffect(() => {
-    document.addEventListener('keypress', keylistener);
-    const onLeft = onSwipe("left", () => { if (currentModal) { if (currentModal === 0) { setModal(images.length - 1) } else { setModal(currentModal - 1) } }; });
-    const onRight = onSwipe("rigth", () => { if (currentModal) { if (currentModal === images.length - 1) { setModal(0) } else { setModal(currentModal + 1) } }; });
+    document.addEventListener('keydown', keylistener);
+    const onLeft = onSwipe("left", () => dispatch("left"));
+    const onRight = onSwipe("rigth", () => dispatch("right"));
     return () => {
-      document.removeEventListener('keypress', keylistener);
+      document.removeEventListener('keydown', keylistener);
       onLeft();
       onRight();
     };
-  })
+  }, [])
   return (
     <article className="media">
       <figure className="media-left">{/* Some other nice big icon */}</figure>
@@ -93,39 +106,43 @@ const DayDetails = ({ title, date, place, images, description, index, isSelected
         </h6>
         <h2 className="title is-4">{title}</h2>
         <p className="content">{description}</p>
-        {images.map((image, idx) => (
-          <>
-            <figure
-              className="image"
-              role="button"
-              tabIndex={0}
-              onClick={() => setModal(idx)}
-            >
-              <Img fixed={image.image.childImageSharp.fixed} alt={image.name} />
-            </figure>
-            <div className={`modal ${currentModal === idx ? "is-active" : ""}`}>
-              <div
+        <ul style={{ display: "flex", flexWrap: "wrap" }}>
+          {images.map((image, idx) => (
+            <>
+              <li
                 role="button"
                 tabIndex={0}
-                onClick={() => setModal(false)}
-                class="modal-background"
-              ></div>
-              <div class="modal-content">
-                <p class="image">
-                  <Img
-                    fluid={image.image.childImageSharp.fluid}
-                    alt={image.name}
-                  />
-                </p>
+                onClick={() => dispatch(idx)}
+                className="image"
+                style={{ paddingRight: "10px" }}
+              >
+                <Img style={{ maxHeight: "100%", minWidth: "100%", objectFit: "cover", verticalAlign: "bottom" }} fixed={image.image.childImageSharp.fixed} alt={image.name} />
+              </li>
+              <div className={`modal ${currentModal === idx ? "is-active" : ""}`}>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => dispatch("close")}
+                  class="modal-background"
+                ></div>
+                <div class="modal-content">
+                  <div class="image">
+                    <Img
+                      fluid={image.image.childImageSharp.fluid}
+                      alt={image.name}
+                    />
+                  </div>
+                </div>
+                <button
+                  onClick={() => dispatch("close")}
+                  class="modal-close is-large"
+                  aria-label="close"
+                ></button>
               </div>
-              <button
-                onClick={() => setModal(false)}
-                class="modal-close is-large"
-                aria-label="close"
-              ></button>
-            </div>
-          </>
-        ))}
+            </>
+          ))}
+          <li style={{ flexGrow: 10 }} />
+        </ul>
       </div>
       <div className="media-right">
         <span
