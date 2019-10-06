@@ -8,50 +8,47 @@ import {
   faMapMarkerAlt
 } from "@fortawesome/free-solid-svg-icons";
 
-const onSwipe = (kind, action) => {
+const onSwipe = (map) => {
   let startX, endX, startY, endY;
-  const setStart = (_, e) => {
+  const setStart = (e) => {
     e.preventDefault();
     startX = e.changedTouches[0].pageX;
     startY = e.changedTouches[0].pageY;
   }
-  const setEnd = (_, e) => {
+  const setEnd = (e) => {
     e.preventDefault();
     endX = e.changedTouches[0].pageX;
     endY = e.changedTouches[0].pageY;
     const diffX = startX - endX;
     const diffY = startY - endY;
+    startX = startY = endX = endY = undefined;
     if (Math.abs(diffX) > 100 || Math.abs(diffY) > 100) {
       if (Math.abs(diffX) > Math.abs(diffY)) {
-        if (diffX > 0 && kind === "left") {
-          action()
+        if (diffX > 0 && map.left) {
+          map.left();
         }
-        if (diffX < 0 && kind === "right") {
-          action()
+        if (diffX < 0 && map.right) {
+          map.right();
         }
       } else {
-        if (diffY > 0 && kind === "up") {
-          action()
+        if (diffY > 0 && map.up) {
+          map.up();
         }
-        if (diffY > 0 && kind === "down") {
-          action()
+        if (diffY > 0 && map.down) {
+          map.down();
         }
       }
     }
   }
-  const prevent = (_, e) => { e.preventDefault() }
   document.addEventListener('touchstart', setStart);
   document.addEventListener('touchend', setEnd);
-  document.addEventListener('touchmove', prevent)
   return () => {
     document.removeEventListener('touchstart', setStart);
     document.removeEventListener('touchend', setEnd);
-    document.removeEventListener('touchmove', prevent);
   }
 }
 
 const createReducer = length => (state, action) => {
-  console.log(length, state);
   switch (action) {
     case "left": return state !== false ? (state === 0 ? length - 1 : state - 1) : state;
     case "right": return state !== false ? (state === length - 1 ? 0 : state + 1) : state;
@@ -76,18 +73,16 @@ const DayDetails = ({ title, date, place, images, description, index, isSelected
         dispatch("right");
         break;
       }
-      default: console.log(e);
+      default: break;
     }
   }
 
   useEffect(() => {
     document.addEventListener('keydown', keylistener);
-    const onLeft = onSwipe("left", () => dispatch("left"));
-    const onRight = onSwipe("rigth", () => dispatch("right"));
+    const deSwipe = onSwipe({ left: () => dispatch("left"), right: () => dispatch("right") });
     return () => {
       document.removeEventListener('keydown', keylistener);
-      onLeft();
-      onRight();
+      deSwipe();
     };
   }, [])
   return (
