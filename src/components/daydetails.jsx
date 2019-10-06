@@ -85,8 +85,7 @@ const DayDetails = ({ title, date, place, images, description, index, isSelected
   }, [])
   return (
     <article className="media">
-      <figure className="media-left">{/* Some other nice big icon */}</figure>
-      <div className="media-content">
+      <div className="media-content" style={{ overflow: "hidden" }}>
         <h6 class="subtitle is-6">
           <span className="icon">
             <FontAwesomeIcon icon={faCalendarDay} />
@@ -99,7 +98,7 @@ const DayDetails = ({ title, date, place, images, description, index, isSelected
         </h6>
         <h2 className="title is-4">{title}</h2>
         <p className="content">{description}</p>
-        <ul style={{ display: "flex", flexWrap: "nowrap" }}>
+        <ul style={{ display: "flex", flexWrap: "nowrap", overflow: "auto" }}>
           {images.map((image, idx) => (
             <>
               <li
@@ -134,7 +133,6 @@ const DayDetails = ({ title, date, place, images, description, index, isSelected
               </div>
             </>
           ))}
-          <li style={{ flexGrow: 10 }} />
         </ul>
       </div>
       <div className="media-right">
