@@ -11,12 +11,10 @@ import {
 const onSwipe = (map) => {
   let startX, endX, startY, endY;
   const setStart = (e) => {
-    e.preventDefault();
     startX = e.changedTouches[0].pageX;
     startY = e.changedTouches[0].pageY;
   }
   const setEnd = (e) => {
-    e.preventDefault();
     endX = e.changedTouches[0].pageX;
     endY = e.changedTouches[0].pageY;
     const diffX = startX - endX;
