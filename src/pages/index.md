@@ -1,7 +1,7 @@
 ---
 templateKey: home
 diary:
-  - date: 2019-10-05T12:24:05.709Z
+  - date: 2019-11-02T06:24:05.709Z
     description: Bangkok warte schon auf mich
     images:
       - image: /img/dscf4897.jpg
