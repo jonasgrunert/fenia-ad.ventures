@@ -5,8 +5,8 @@ diary:
     description: "Nur noch zwei Tage \U0001F389"
     images: []
     place:
-      name: 'Berlin '
-      position: '{"type":"Point","coordinates":[100.513116,13.7505604]}'
+      name: 'Bangkok, JAM Hostel '
+      position: '{"type":"Point","coordinates":[100.4970176,13.7631839]}'
     title: The very first post
 ---
 
