@@ -1,11 +1,13 @@
 ---
 templateKey: home
 diary:
-  - date: 2019-10-31T10:11:05.709Z
-    description: "Nur noch zwei Tage \U0001F389"
-    images: []
+  - date: 2019-11-01T20:50:00.000Z
+    description: 'Nur noch eine Nacht '
+    images:
+      - image: /img/snapchat-2046886800.jpg
+        name: 'Mein ganzes Hab und Gut '
     place:
-      name: 'Bangkok, JAM Hostel '
+      name: 'Zuhause '
       position: '{"type":"Point","coordinates":[100.4970176,13.7631839]}'
     title: The very first post
 ---
