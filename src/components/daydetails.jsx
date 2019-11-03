@@ -154,7 +154,6 @@ const DayDetails = ({
                 fixed={image.image.childImageSharp.fixed}
                 alt={image.name}
               />
-              <h1 className="subtitle">{image.name}</h1>
             </li>
             <div className={`modal ${currentModal === idx ? "is-active" : ""}`}>
               <div
