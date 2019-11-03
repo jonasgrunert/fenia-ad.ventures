@@ -21,6 +21,8 @@ diary:
         name: Eine Sehenswürdigkeit
       - image: /img/img_20191103_094935.jpg
         name: Eine andere Perspektive
+      - image: /img/img_20191103_192927.jpg
+        name: 'Thai Boxen '
     place:
       name: 'Bangkok, JAM Hostel '
       position: '{"type":"Point","coordinates":[100.4974177,13.7628284]}'
