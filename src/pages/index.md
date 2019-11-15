@@ -127,7 +127,7 @@ diary:
       - image: /img/img_20191115_183146.jpg
         name: Aussicht von meinem Bett auf Koh Lonta
       - image: /img/img_20191115_200504.jpg
-        name: Erster Abend mit BBQ auf Koh Lonta
+        name: 'Erster Abend mit BBQ auf Koh Lanta '
       - image: /img/img_20191115_154416.jpg
         name: Ein ganz normaler Thai Hafen
     place:
