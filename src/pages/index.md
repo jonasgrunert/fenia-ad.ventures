@@ -1,15 +1,6 @@
 ---
 templateKey: home
 diary:
-  - date: 2019-11-01T20:50:00.000Z
-    description: 'Nur noch eine Nacht '
-    images:
-      - image: /img/snapchat-2046886800.jpg
-        name: 'Mein ganzes Hab und Gut '
-    place:
-      name: 'Zuhause '
-      position: '{"type":"Point","coordinates":[100.4970176,13.7631839]}'
-    title: The very first post
   - date: 2019-11-03T10:02:01.412Z
     description: >-
       Einfach ein bisschen durch die Straßen gelaufen und habe Bangkok einfach
@@ -134,5 +125,31 @@ diary:
       name: 'Koh Lanta '
       position: '{"type":"Point","coordinates":[99.035332,7.5708115]}'
     title: Und weiter nach Koh Lanta
+  - date: 2019-11-17T16:42:10.128Z
+    description: >-
+      Gestern war wir viel unterwegs. Erst sind wir zu den Mangroven gefahren wo
+      wir uns als Gruppe eine Boot gemietet haben. Am Ende der Fahrt kam ein
+      Affe zu uns aufs Boot. Ich konnte ihn sogar füttern. Danach sind wir noch
+      zu einem Wasserfall gewandert. Dies war ein sehr abenteuerliche Weg. Dort
+      sind wir dann an den Strand um uns den Sonnenuntergang anzuschauenp
+    images:
+      - image: /img/img_20191117_182208.jpg
+        name: 'Sonnenuntergang '
+      - image: /img/img_20191117_110005.jpg
+        name: 'Diving '
+      - image: /img/img_20191116_175311.jpg
+        name: 'Am Wasserfall '
+      - image: /img/img_20191116_161524.jpg
+        name: 'Sehr kleiner Wasserfall '
+      - image: /img/img_20191116_132708_418.jpg
+        name: 'Neuer Freund '
+      - image: /img/img_20191116_114336.jpg
+        name: 'Bootsfahrt durch Mangroven '
+      - image: /img/img_20191116_102659.jpg
+        name: Erste Rollerfahrt
+    place:
+      name: 'Koh Lanta '
+      position: '{"type":"Point","coordinates":[99.0366347,7.5693322]}'
+    title: 'Schon sind zwei Wochen vergangen '
 ---
 
