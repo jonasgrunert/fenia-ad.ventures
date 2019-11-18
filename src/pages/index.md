@@ -147,6 +147,8 @@ diary:
         name: 'Bootsfahrt durch Mangroven '
       - image: /img/img_20191116_102659.jpg
         name: Erste Rollerfahrt
+      - image: /img/img-20191116-wa0119.jpg
+        name: ''
     place:
       name: 'Koh Lanta '
       position: '{"type":"Point","coordinates":[99.0366347,7.5693322]}'
