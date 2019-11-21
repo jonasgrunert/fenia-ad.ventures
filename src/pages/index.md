@@ -131,7 +131,9 @@ diary:
       wir uns als Gruppe eine Boot gemietet haben. Am Ende der Fahrt kam ein
       Affe zu uns aufs Boot. Ich konnte ihn sogar füttern. Danach sind wir noch
       zu einem Wasserfall gewandert. Dies war ein sehr abenteuerliche Weg. Dort
-      sind wir dann an den Strand um uns den Sonnenuntergang anzuschauen. 
+      sind wir dann an den Strand um uns den Sonnenuntergang anzuschauen. Am
+      nächsten Tag war ich vormittags tauchen. Der Tauchplatz war schön, aber
+      nicht so ein Erlebnis wie in Koh Tao. 
     images:
       - image: /img/img_20191117_182208.jpg
         name: 'Sonnenuntergang '
