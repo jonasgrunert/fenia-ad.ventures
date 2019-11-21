@@ -189,7 +189,7 @@ diary:
       - {}
     place:
       name: 'Chiang Mai '
-      position: '{"type":"Point","coordinates":[98.9862025,18.7958975]}'
+      position: '{"type":"Point","coordinates":[98.9864281,18.7968346]}'
     title: 'Ein wunderschöner Nationalpark '
 ---
 
