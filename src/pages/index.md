@@ -190,8 +190,8 @@ diary:
       - image: /img/img_20191122_102341_772.jpg
         name: 'Meerjungfrau '
     place:
-      name: 'Chiang Mai '
-      position: '{"type":"Point","coordinates":[98.9864281,18.7968346]}'
+      name: Khao Sok
+      position: '{"type":"Point","coordinates":[98.6588505,9.059455]}'
     title: 'Ein wunderschöner Nationalpark '
 ---
 
