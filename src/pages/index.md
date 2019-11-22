@@ -172,21 +172,23 @@ diary:
       - image: /img/img-20191120-wa0045.jpg
         name: 'Wanderung dir h den Dschungel '
       - image: /img/img_20191119_175318.jpg
-        name: ''
+        name: 'Nationalpark '
       - image: /img/img-20191120-wa0062.jpg
         name: 'Freizeit Gestaltung '
       - image: /img/img-20191120-wa0090.jpg
         name: 'Die drei Felsen sind ein Merkmal des Nationalparks. '
       - image: /img/img-20191120-wa0100.jpg
+        name: 'Einfach nur schön '
       - image: /img/img-20191120-wa0115.jpg
         name: 'Bootsfahrt '
       - image: /img/img_20191119_173156.jpg
         name: 'Im Nationalpark '
       - image: /img/img_20191119_175353.jpg
-        name: ''
+        name: 'Bootsfahrt bei Sonnenuntergang '
       - image: /img/img_20191119_180039.jpg
         name: 'Sonnenuntergang '
-      - {}
+      - image: /img/img_20191122_102341_772.jpg
+        name: 'Meerjungfrau '
     place:
       name: 'Chiang Mai '
       position: '{"type":"Point","coordinates":[98.9864281,18.7968346]}'
