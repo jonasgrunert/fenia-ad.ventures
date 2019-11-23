@@ -211,6 +211,6 @@ diary:
     place:
       name: Pai
       position: '{"type":"Point","coordinates":[98.439088,19.3603818]}'
-    title: 'Letzte Woche IN Thailand beginnt '
+    title: 'Letzte Woche in Thailand beginnt '
 ---
 
