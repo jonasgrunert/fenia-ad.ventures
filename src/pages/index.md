@@ -236,6 +236,6 @@ diary:
     place:
       name: 'Chiang Mai '
       position: '{"type":"Point","coordinates":[98.9866233,18.7969481]}'
-    title: ''
+    title: Ein kleiner Restteil
 ---
 
