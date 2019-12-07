@@ -237,5 +237,21 @@ diary:
       name: 'Chiang Mai '
       position: '{"type":"Point","coordinates":[98.9866233,18.7969481]}'
     title: Ein kleiner Restteil
+  - date: 2019-12-07T12:44:23.251Z
+    description: >-
+      Nach langer Zeit konnte ich heute wieder rausgehen und was erleben. Heute
+      habe ich eine Bootstour über den Inle Lake gemacht. Auf dem Inle Lake
+      befinden sich mehrere kleine Dörfer, die meist einen handwerklichen
+      Schwerpunkt haben. Die letzten Woche war bei mir eher unspektakulär, da
+      ich meinen Fuß auskorieren musste. Ich bin von Chiang Mai nach Yangon in
+      Myanmar geflogen. Dann bin ich weiter mit dem Nachtbus zum Inle Lake
+      gefahren. 
+    images:
+      - image: /img/img_20191204_120511.jpg
+        name: 'Entspannen um meinen Fuß zu regenerieren '
+    place:
+      name: 'Nyaung Shwe '
+      position: '{"type":"Point","coordinates":[96.9470731,18.1853528]}'
+    title: Mal wieder was erlebt
 ---
 
