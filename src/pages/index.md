@@ -249,6 +249,20 @@ diary:
     images:
       - image: /img/img_20191204_120511.jpg
         name: 'Entspannen um meinen Fuß zu regenerieren '
+      - image: /img/img_20191207_152721.jpg
+        name: 'Berühmte Einbein Padler '
+      - image: /img/img_20191207_135434.jpg
+        name: ''
+      - image: /img/img_20191207_123141.jpg
+        name: 'Sind auch einmal stecken geblieben '
+      - image: /img/img_20191207_105334.jpg
+        name: Pagode auf dem See
+      - image: /img/img_20191207_102953.jpg
+      - image: /img/img_20191207_102908.jpg
+      - image: /img/img_20191207_085607.jpg
+        name: Auf dem See
+      - image: /img/img_20191207_093449.jpg
+        name: 'Auf dem lokalen Markt '
     place:
       name: 'Nyaung Shwe '
       position: '{"type":"Point","coordinates":[96.9470731,18.1853528]}'
