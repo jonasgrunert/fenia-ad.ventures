@@ -291,5 +291,23 @@ diary:
       name: 'Inle Lake '
       position: '{"type":"Point","coordinates":[96.9528494,18.1864038]}'
     title: 'Fahrradtour mit dem "besten" Fahrrad '
+  - date: 2019-12-10T13:39:37.847Z
+    images:
+      - image: /img/img_20191209_061738.jpg
+      - image: /img/img_20191209_120039.jpg
+      - image: /img/img_20191209_120728.jpg
+      - image: /img/img_20191210_111003.jpg
+      - image: /img/img_20191210_094844.jpg
+      - image: /img/img_20191210_103107.jpg
+      - image: /img/img_20191211_100338.jpg
+        name: Mandalay Hill
+      - image: /img/img_20191211_101013.jpg
+        name: Mandalay Hill
+      - image: /img/img_20191211_112125.jpg
+        name: 'Kloster in Mandalay '
+    place:
+      name: 'Mandalay '
+      position: '{"type":"Point","coordinates":[96.0941747,21.9770366]}'
+    title: 'Einzigster Tourist für drei Stunden '
 ---
 
