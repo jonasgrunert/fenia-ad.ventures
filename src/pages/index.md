@@ -294,8 +294,11 @@ diary:
   - date: 2019-12-10T13:39:37.847Z
     images:
       - image: /img/img_20191209_061738.jpg
+        name: 'Sonnenaufgang auf der U Bein Bridge '
       - image: /img/img_20191209_120039.jpg
+        name: Pagode
       - image: /img/img_20191209_120728.jpg
+        name: 'Pagode '
       - image: /img/img_20191210_111003.jpg
       - image: /img/img_20191210_094844.jpg
       - image: /img/img_20191210_103107.jpg
