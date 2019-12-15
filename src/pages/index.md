@@ -292,6 +292,11 @@ diary:
       position: '{"type":"Point","coordinates":[96.9528494,18.1864038]}'
     title: 'Fahrradtour mit dem "besten" Fahrrad '
   - date: 2019-12-10T13:39:37.847Z
+    description: >-
+      In Mandalay habe ich zum ersten Mal gemerkt, wie wenig Touristen in
+      Myanmar unterwegs sind. Ich bin drei Stunden durch die Stadt gelaufen und
+      habe keinen einzigen Touristen gesehen. Myanmar ist nochmal ganz anders,
+      aber super schön. 
     images:
       - image: /img/img_20191209_061738.jpg
         name: 'Sonnenaufgang auf der U Bein Bridge '
