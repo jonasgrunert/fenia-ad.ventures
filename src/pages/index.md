@@ -355,7 +355,7 @@ diary:
         name: Mountain Popa
     place:
       name: New Bagan
-      position: '{"type":"Point","coordinates":[94.8589498,21.1322359]}'
+      position: '{"type":"Point","coordinates":[94.858791,21.1321282]}'
     title: 'Bagan, Lieblingsplatz in Myanmar bisher'
 ---
 
