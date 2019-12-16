@@ -327,7 +327,7 @@ diary:
       Sonnenuntergang sind wir dort gewesen. Außerdem habe ich tolle Menschen
       kennengelernt,mit denen ich sehr lustig Abende verbringen konnte. Auf der
       Pagode war es meist sehr ruhig und nicht sehr viele Touristen so war es
-      fast wie eine Meditation am Abend und Morgen. 
+      fast wie eine Meditation am Abend und Morgen.
     images:
       - image: /img/img_20191215_174507.jpg
         name: Sonnenuntergang mal wieder
