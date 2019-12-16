@@ -333,7 +333,6 @@ diary:
         name: Sonnenuntergang mal wieder
       - image: /img/img_20191215_173257.jpg
       - image: /img/20191214_065502_003_saved.jpg
-      - image: /img/img_20191215_173257.jpg
       - image: /img/img_20191215_172643.jpg
       - image: /img/img_20191215_172029.jpg
       - image: /img/img_20191215_164059.jpg
