@@ -317,5 +317,11 @@ diary:
       name: 'Mandalay '
       position: '{"type":"Point","coordinates":[96.0941747,21.9770366]}'
     title: 'Einzigster Tourist für drei Stunden '
+  - date: 2019-12-16T06:29:09.139Z
+    images:
+      - image: /img/img_20191215_174507.jpg
+        name: Sonnenuntergang mal wieder
+      - image: /img/img_20191215_173257.jpg
+      - {}
 ---
 
