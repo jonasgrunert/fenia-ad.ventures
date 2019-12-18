@@ -52,7 +52,7 @@ export default ({ data }) => {
                   />)}
               </Geographies>
               <Markers>
-                {data.markdownRemark.frontmatter.diary.map((entry, i) => <Marker marker={{ coordinates: JSON.parse(entry.place.position).coordinates }} style={{
+                {data.markdownRemark.frontmatter.diary.reverse().map((entry, i) => <Marker marker={{ coordinates: JSON.parse(entry.place.position).coordinates }} style={{
                   default: { fill: i === currentPoint ? "#ffdb4a" : "#666" },
                   hover: { fill: i === currentPoint ? "#ffdb4a" : "#666" },
                   pressed: { fill: i === currentPoint ? "#ffdb4a" : "#666" }
