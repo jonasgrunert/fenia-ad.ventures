@@ -134,7 +134,7 @@ const DayDetails = ({
           </span>
         </div>
       </article>
-      <ul style={{ display: "flex", flexWrap: "nowrap", overflow: "auto" }}>
+      <ul style={{ display: "flex", flexWrap: "nowrap", overflow: "auto", marginBottom: "4px" }}>
         {images.map((image, idx) => (
           <>
             <li
