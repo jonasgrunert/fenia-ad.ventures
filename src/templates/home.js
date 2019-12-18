@@ -65,7 +65,7 @@ export default ({ data }) => {
       </section>
       <section className="section">
         <div className="container">
-          {data.markdownRemark.frontmatter.diary.map((entry, i) => (
+          {data.markdownRemark.frontmatter.diary.reverse().map((entry, i) => (
             <DayDetails
               key={i}
               index={i}
