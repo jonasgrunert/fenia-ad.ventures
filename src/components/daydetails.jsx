@@ -23,10 +23,10 @@ const onSwipe = map => {
     if (Math.abs(diffX) > 100 || Math.abs(diffY) > 100) {
       if (Math.abs(diffX) > Math.abs(diffY)) {
         if (diffX > 0 && map.left) {
-          map.left();
+          map.right();
         }
         if (diffX < 0 && map.right) {
-          map.right();
+          map.left();
         }
       } else {
         if (diffY > 0 && map.up) {
@@ -107,6 +107,7 @@ const DayDetails = ({
     <>
       <article className="media">
         <div className="media-content" style={{ overflow: "hidden" }}>
+          <h2 className="title is-4">{title}</h2>
           <h6 class="subtitle is-6">
             <span className="icon">
               <FontAwesomeIcon icon={faCalendarDay} />
@@ -117,7 +118,6 @@ const DayDetails = ({
             </span>
             {" " + place}
           </h6>
-          <h2 className="title is-4">{title}</h2>
           <p className="content">{description}</p>
         </div>
         <div className="media-right">
