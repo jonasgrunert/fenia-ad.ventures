@@ -2,11 +2,22 @@ import React, { useReducer } from "react";
 import Header from "./navbar";
 import DayDetails from "../components/daydetails";
 import { graphql } from "gatsby";
-import { ComposableMap, Geographies, Geography, ZoomableGroup, Markers, Marker } from "react-simple-maps";
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  ZoomableGroup,
+  Markers,
+  Marker
+} from "react-simple-maps";
 import mapData from "./map.json";
 
 export default ({ data }) => {
-  const [currentPoint, dispatch] = useReducer((s, i) => s === i ? false : i, false);
+  const diaries = [...data.markdownRemark.frontmatter.diary].reverse();
+  const [currentPoint, dispatch] = useReducer(
+    (s, i) => (s === i ? false : i),
+    false
+  );
   return (
     <>
       <Header />
@@ -24,40 +35,63 @@ export default ({ data }) => {
           >
             <ZoomableGroup zoom={3} center={[100, 15]} disablePanning>
               <Geographies geography={mapData}>
-                {(geographies, projection) => geographies.map((geography, i) =>
-                  <Geography
-                    key={i}
-                    geography={geography}
-                    projection={projection}
-                    style={{
-                      default: {
-                        stroke: "#607D8B",
-                        fill: "#fff",
-                        outline: "none",
-                        strokeWidth: 0.25
-                      },
-                      hover: {
-                        stroke: "#607D8B",
-                        fill: "#fff",
-                        outline: "none",
-                        strokeWidth: 0.5
-                      },
-                      pressed: {
-                        stroke: "#607D8B",
-                        fill: "#607D8B",
-                        outline: "none",
-                        strokeWidth: 0.0
-                      }
-                    }}
-                  />)}
+                {(geographies, projection) =>
+                  geographies.map((geography, i) => (
+                    <Geography
+                      key={i}
+                      geography={geography}
+                      projection={projection}
+                      style={{
+                        default: {
+                          stroke: "#607D8B",
+                          fill: "#fff",
+                          outline: "none",
+                          strokeWidth: 0.25
+                        },
+                        hover: {
+                          stroke: "#607D8B",
+                          fill: "#fff",
+                          outline: "none",
+                          strokeWidth: 0.5
+                        },
+                        pressed: {
+                          stroke: "#607D8B",
+                          fill: "#607D8B",
+                          outline: "none",
+                          strokeWidth: 0.0
+                        }
+                      }}
+                    />
+                  ))
+                }
               </Geographies>
               <Markers>
-                {data.markdownRemark.frontmatter.diary.reverse().map((entry, i) => <Marker marker={{ coordinates: JSON.parse(entry.place.position).coordinates }} style={{
-                  default: { fill: i === currentPoint ? "#ffdb4a" : "#666" },
-                  hover: { fill: i === currentPoint ? "#ffdb4a" : "#666" },
-                  pressed: { fill: i === currentPoint ? "#ffdb4a" : "#666" }
-                }}><circle cx={0} cy={0} r={i === currentPoint ? 3 : 1} />{i === currentPoint && <text textAnchor="middle"
-                  y={-3} x={10} style={{ fill: "#666", fontSize: "0.3em" }}>{entry.place.name}</text>}</Marker>)}
+                {diaries.map((entry, i) => (
+                  <Marker
+                    marker={{
+                      coordinates: JSON.parse(entry.place.position).coordinates
+                    }}
+                    style={{
+                      default: {
+                        fill: i === currentPoint ? "#ffdb4a" : "#666"
+                      },
+                      hover: { fill: i === currentPoint ? "#ffdb4a" : "#666" },
+                      pressed: { fill: i === currentPoint ? "#ffdb4a" : "#666" }
+                    }}
+                  >
+                    <circle cx={0} cy={0} r={i === currentPoint ? 3 : 1} />
+                    {i === currentPoint && (
+                      <text
+                        textAnchor="middle"
+                        y={-3}
+                        x={10}
+                        style={{ fill: "#666", fontSize: "0.3em" }}
+                      >
+                        {entry.place.name}
+                      </text>
+                    )}
+                  </Marker>
+                ))}
               </Markers>
             </ZoomableGroup>
           </ComposableMap>
@@ -65,7 +99,7 @@ export default ({ data }) => {
       </section>
       <section className="section">
         <div className="container">
-          {data.markdownRemark.frontmatter.diary.map((entry, i) => (
+          {diaries.map((entry, i) => (
             <DayDetails
               key={i}
               index={i}
@@ -86,31 +120,31 @@ export default ({ data }) => {
 
 export const query = graphql`
   query HomaPageQuery($id: String) {
-        markdownRemark(id: {eq: $id }) {
-        frontmatter {
-      diary {
-        date
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        diary {
+          date
           description
-      place {
-        position
+          place {
+            position
             name
-      }
-      title
+          }
+          title
           images {
-        name
+            name
             image {
-        childImageSharp {
-      fixed(height: 128) {
-        ...GatsbyImageSharpFixed_withWebp_tracedSVG
-      }
-      fluid {
-        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-      }
+              childImageSharp {
+                fixed(height: 128) {
+                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                }
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
-}
-}
-}
-}
 `;
