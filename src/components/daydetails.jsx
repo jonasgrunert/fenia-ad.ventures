@@ -106,9 +106,9 @@ const DayDetails = ({
   return (
     <>
       <article className="media">
-        <div className="media-content" style={{ overflow: "hidden" }}>
+        <div className="media-content" style={{ overflow: "hidden", marginBottom: "1em" }}>
           <h2 className="title is-4">{title}</h2>
-          <h6 class="subtitle is-6">
+          <h6 class="subtitle is-6" style={{marginBottom: "0.3em"}}>
             <span className="icon">
               <FontAwesomeIcon icon={faCalendarDay} />
             </span>
@@ -134,7 +134,7 @@ const DayDetails = ({
           </span>
         </div>
       </article>
-      <ul style={{ display: "flex", flexWrap: "nowrap", overflow: "auto", marginBottom: "1em" }}>
+      <ul style={{ display: "flex", flexWrap: "nowrap", overflow: "auto", marginBottom: "2em" }}>
         {images.map((image, idx) => (
           <>
             <li
@@ -163,15 +163,13 @@ const DayDetails = ({
                 class="modal-background"
               ></div>
               <div className="modal-content">
-                <div className="box">
-                  <div className="image">
-                    <Img
-                      fluid={image.image.childImageSharp.fluid}
-                      alt={image.name}
-                    />
-                    <h1 className="subtitle">{image.name}</h1>
-                  </div>
-                </div>
+                <p className="image">
+                  <Img
+                    fluid={image.image.childImageSharp.fluid}
+                    alt={image.name}
+                  />
+                </p>
+                {image.name && <div className="box"><h1 className="subtitle">{image.name}</h1></div>}
               </div>
               <button
                 onClick={() => dispatch("close")}
