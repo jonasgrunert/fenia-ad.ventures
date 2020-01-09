@@ -66,32 +66,40 @@ export default ({ data }) => {
                 }
               </Geographies>
               <Markers>
-                {diaries.map((entry, i) => (
-                  <Marker
-                    marker={{
-                      coordinates: JSON.parse(entry.place.position).coordinates
-                    }}
-                    style={{
-                      default: {
-                        fill: i === currentPoint ? "#ffdb4a" : "#666"
-                      },
-                      hover: { fill: i === currentPoint ? "#ffdb4a" : "#666" },
-                      pressed: { fill: i === currentPoint ? "#ffdb4a" : "#666" }
-                    }}
-                  >
-                    <circle cx={0} cy={0} r={i === currentPoint ? 3 : 1} />
-                    {i === currentPoint && (
-                      <text
-                        textAnchor="middle"
-                        y={-3}
-                        x={10}
-                        style={{ fill: "#666", fontSize: "0.3em" }}
+                {diaries.map(
+                  (entry, i) =>
+                    entry.place.position && (
+                      <Marker
+                        marker={{
+                          coordinates: JSON.parse(entry.place.position)
+                            .coordinates
+                        }}
+                        style={{
+                          default: {
+                            fill: i === currentPoint ? "#ffdb4a" : "#666"
+                          },
+                          hover: {
+                            fill: i === currentPoint ? "#ffdb4a" : "#666"
+                          },
+                          pressed: {
+                            fill: i === currentPoint ? "#ffdb4a" : "#666"
+                          }
+                        }}
                       >
-                        {entry.place.name}
-                      </text>
-                    )}
-                  </Marker>
-                ))}
+                        <circle cx={0} cy={0} r={i === currentPoint ? 3 : 1} />
+                        {i === currentPoint && (
+                          <text
+                            textAnchor="middle"
+                            y={-3}
+                            x={10}
+                            style={{ fill: "#666", fontSize: "0.3em" }}
+                          >
+                            {entry.place.name}
+                          </text>
+                        )}
+                      </Marker>
+                    )
+                )}
               </Markers>
             </ZoomableGroup>
           </ComposableMap>
