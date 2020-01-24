@@ -32,12 +32,6 @@ export const query = graphql`
               name
               image {
                 relativePath
-                childImageSharp {
-                  original {
-                    height
-                    width
-                  }
-                }
               }
             }
           }

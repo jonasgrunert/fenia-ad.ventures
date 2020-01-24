@@ -139,8 +139,7 @@ const DayDetails = ({
       </article>
       <ul
         style={{
-          display: "flex",
-          flexWrap: "nowrap",
+          whiteSpace: "nowrap",
           overflow: "auto",
           marginBottom: "2em"
         }}
@@ -151,29 +150,21 @@ const DayDetails = ({
               role="button"
               tabIndex={0}
               onClick={() => dispatch(idx)}
-              style={{ paddingRight: "10px" }}
+              style={{ paddingRight: "10px", display: "inline-block" }}
             >
               <figure
                 className="image"
                 style={{
-                  height: "128px",
-                  width:
-                    image.image.childImageSharp.original.width *
-                    (128 / image.image.childImageSharp.original.height)
+                  height: "128px"
                 }}
               >
                 <img
                   alt={image.name}
                   src={`/img/${image.image.relativePath}?nf_resize=fit&h=128`}
                   height={128}
-                  width={
-                    image.image.childImageSharp.original.width *
-                    (128 / image.image.childImageSharp.original.height)
-                  }
                   style={{
                     height: "128px",
-                    objectFit: "cover",
-                    minWidth: "100%"
+                    objectFit: "cover"
                   }}
                 />
               </figure>
