@@ -18,50 +18,49 @@ collections:
     folder: "src/pages/diary"
     create: true
     slug: "{{title}}"
-    files:
-      fields:
-        - label: Template key
-          name: templateKey
-          widget: hidden
-          default: home
-        - label: Title
-          name: title
-          widget: string
-          required: false
-        - label: Date
-          name: date
-          widget: datetime
-          required: false
-        - label: Place
-          name: place
-          widget: object
-          required: false
-          fields:
-            - label: Position
-              name: position
-              widget: map
-              required: false
-            - label: Name
-              name: name
-              widget: string
-              required: false
-        - label: Images
-          name: images
-          widget: list
-          required: false
-          fields:
-            - label: Image
-              name: image
-              widget: image
-              required: false
-            - label: Image Name
-              name: name
-              widget: string
-              required: false
-        - label: Description
-          name: description
-          widget: text
-          required: false
+    fields:
+      - label: Template key
+        name: templateKey
+        widget: hidden
+        default: home
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Date
+        name: date
+        widget: datetime
+        required: false
+      - label: Place
+        name: place
+        widget: object
+        required: false
+        fields:
+          - label: Position
+            name: position
+            widget: map
+            required: false
+          - label: Name
+            name: name
+            widget: string
+            required: false
+      - label: Images
+        name: images
+        widget: list
+        required: false
+        fields:
+          - label: Image
+            name: image
+            widget: image
+            required: false
+          - label: Image Name
+            name: name
+            widget: string
+            required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
 
   - name: "pages"
     label: "Pages"
