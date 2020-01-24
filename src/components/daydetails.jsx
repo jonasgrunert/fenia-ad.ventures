@@ -106,9 +106,12 @@ const DayDetails = ({
   return (
     <>
       <article className="media">
-        <div className="media-content" style={{ overflow: "hidden", marginBottom: "1em" }}>
+        <div
+          className="media-content"
+          style={{ overflow: "hidden", marginBottom: "1em" }}
+        >
           <h2 className="title is-4">{title}</h2>
-          <h6 class="subtitle is-6" style={{marginBottom: "0.3em"}}>
+          <h6 class="subtitle is-6" style={{ marginBottom: "0.3em" }}>
             <span className="icon">
               <FontAwesomeIcon icon={faCalendarDay} />
             </span>
@@ -134,26 +137,46 @@ const DayDetails = ({
           </span>
         </div>
       </article>
-      <ul style={{ display: "flex", flexWrap: "nowrap", overflow: "auto", marginBottom: "2em" }}>
+      <ul
+        style={{
+          display: "flex",
+          flexWrap: "nowrap",
+          overflow: "auto",
+          marginBottom: "2em"
+        }}
+      >
         {images.map((image, idx) => (
           <>
             <li
               role="button"
               tabIndex={0}
               onClick={() => dispatch(idx)}
-              className="image"
               style={{ paddingRight: "10px" }}
             >
-              <Img
+              <figure
+                className="image"
                 style={{
-                  maxHeight: "100%",
-                  minWidth: "100%",
-                  objectFit: "cover",
-                  verticalAlign: "bottom"
+                  height: "128px",
+                  width:
+                    image.image.childImageSharp.original.width *
+                    (128 / image.image.childImageSharp.original.height)
                 }}
-                fixed={image.image.childImageSharp.fixed}
-                alt={image.name}
-              />
+              >
+                <img
+                  alt={image.name}
+                  src={`/img/${image.image.relativePath}?nf_resize=fit&h=128`}
+                  height={128}
+                  width={
+                    image.image.childImageSharp.original.width *
+                    (128 / image.image.childImageSharp.original.height)
+                  }
+                  style={{
+                    height: "128px",
+                    objectFit: "cover",
+                    minWidth: "100%"
+                  }}
+                />
+              </figure>
             </li>
             <div className={`modal ${currentModal === idx ? "is-active" : ""}`}>
               <div
@@ -164,12 +187,23 @@ const DayDetails = ({
               ></div>
               <div className="modal-content">
                 <p className="image">
-                  <Img
-                    fluid={image.image.childImageSharp.fluid}
+                  <img
                     alt={image.name}
+                    src={`/img/${image.image.relativePath}`}
+                    style={{
+                      maxHeight: "85vh",
+                      objectFit: "cover",
+                      margin: "auto",
+                      display: "block",
+                      width: "auto"
+                    }}
                   />
                 </p>
-                {image.name && <div className="box"><h1 className="subtitle">{image.name}</h1></div>}
+                {image.name && (
+                  <div className="box">
+                    <h1 className="subtitle">{image.name}</h1>
+                  </div>
+                )}
               </div>
               <button
                 onClick={() => dispatch("close")}

@@ -12,8 +12,7 @@ import {
 } from "react-simple-maps";
 import mapData from "./map.json";
 
-export default ({ data }) => {
-  const diaries = [...data.markdownRemark.frontmatter.diary].reverse();
+export default ({ diaries }) => {
   const [currentPoint, dispatch] = useReducer(
     (s, i) => (s === i ? false : i),
     false
@@ -125,34 +124,3 @@ export default ({ data }) => {
     </>
   );
 };
-
-export const query = graphql`
-  query HomaPageQuery($id: String) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        diary {
-          date
-          description
-          place {
-            position
-            name
-          }
-          title
-          images {
-            name
-            image {
-              childImageSharp {
-                fixed(height: 128) {
-                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
-                }
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;

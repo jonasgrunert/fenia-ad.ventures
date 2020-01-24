@@ -28,10 +28,13 @@ const Header = () => {
       }
     }
   `);
-  const links = data.allMarkdownRemark.edges.map(({ node }) => ({
-    title: node.frontmatter.title,
-    slug: node.fields.slug
-  }));
+  const links = data.allMarkdownRemark.edges
+    .map(({ node }) => ({
+      title: node.frontmatter.title,
+      slug: node.fields.slug,
+      templateKey: node.frontmatter.templateKey
+    }))
+    .filter(n => n.templateKey !== "home");
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -50,22 +53,28 @@ const Header = () => {
       <nav className="navbar" role="navigation">
         <div class="navbar-brand">
           <div class="navbar-item">
-            <Link to="/"><img src={Logo} alt="LogoFenia Adventures" /></Link>
+            <Link to="/">
+              <img src={Logo} alt="LogoFenia Adventures" />
+            </Link>
           </div>
 
-          {links.length > 1 && <a
-            role="button"
-            href="#menu"
-            className={`navbar-burger burger${open ? " close is-active" : ""}`}
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-            onClick={() => setOpen(!open)}
-          >
-            <div className="burger-icon">
-              <div className="burger-bar"></div>
-            </div>
-          </a>}
+          {links.length > 1 && (
+            <a
+              role="button"
+              href="#menu"
+              className={`navbar-burger burger${
+                open ? " close is-active" : ""
+              }`}
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+              onClick={() => setOpen(!open)}
+            >
+              <div className="burger-icon">
+                <div className="burger-bar"></div>
+              </div>
+            </a>
+          )}
         </div>
         <div
           id="navbarBasicExample"
