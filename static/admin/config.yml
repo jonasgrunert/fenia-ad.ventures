@@ -1,5 +1,4 @@
 backend:
-  use_large_media_transforms_in_media_library: false
   name: git-gateway
   branch: master
   commit_messages:

@@ -180,7 +180,7 @@ const DayDetails = ({
                 <p className="image">
                   <img
                     alt={image.name}
-                    src={`/img/${image.image.relativePath}`}
+                    src={`/img/${image.image.relativePath}?nf_resize=fit&w=1080`}
                     style={{
                       maxHeight: "85vh",
                       objectFit: "cover",
