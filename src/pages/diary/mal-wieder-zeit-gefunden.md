@@ -20,6 +20,8 @@ images:
     name: 'Zu viele süße Hunde '
   - image: /img/IMG_20200123_184424.jpg
     name: 'Aussicht von meinem Bungalow '
+  - image: /img/received_607523196479013.jpeg
+    name: Nie wieder ohne Flossen irgendwo hin
 description: >-
   Immer noch auf Koh Tao, ich habe mich in diese Insel so verliebt. Ich werde am
   19 Februar nach Laos für drei Wochen gehen und dann wieder kommen um den Rest
