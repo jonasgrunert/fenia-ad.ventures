@@ -1,6 +1,6 @@
 ---
 templateKey: home
-title: I love nature
+title: 'I love nature! '
 date: 2020-02-29T07:57:08.847Z
 place:
   name: 'Nong Khiaw '
