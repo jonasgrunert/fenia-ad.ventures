@@ -18,7 +18,6 @@ images:
     name: 'Sieht fast nie aus wie ein Weg, muss eher klettern als gehen'
   - image: /img/IMG_20200229_131345.jpg
     name: 'Einfach nur wunderschön Natur '
-  - {}
   - image: /img/IMG_20200229_111632.jpg
     name: 'Eine Stunde komplett alleine auf dem Viewpoint, was will man mehr? '
 description: >
