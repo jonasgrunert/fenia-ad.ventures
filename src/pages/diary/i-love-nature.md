@@ -21,9 +21,9 @@ images:
   - {}
   - image: /img/IMG_20200229_111632.jpg
     name: 'Eine Stunde komplett alleine auf dem Viewpoint, was will man mehr? '
-description: >-
+description: >
   Sehr schöne kleine Stadt mit toller Natur drumherum. Ein perfekt Ort um sich
   vom ganzen Trubel auf Koh Tao zu erholen. Es sind nicht viele Touristen hier,
-  was auch sehr erholsam ist.
+  was auch sehr erholsam ist
 ---
 
