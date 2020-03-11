@@ -31,5 +31,8 @@ images:
   - image: /img/IMG_20200306_095526.jpg
   - image: /img/IMG_20200306_092934.jpg
     name: Morgenmarkt
+description: >-
+  Die letzte Woche habe ich in Luang Prabang verbracht. Heute geht es zurück
+  nach Koh Tao.
 ---
 
